@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+  --transition: 1.5s cubic-bezier(0.05, 0.5, 0, 1);
+}
+
+@font-face {
+  font-family: kamerik-3d;
+  src: url(../fonts/kamerik205-heavy.woff2);
+  font-weight: 900;
+}
+@font-face {
+  font-family: marriweather-italic-3d;
+  src: url(../fonts/merriweather-regular-italic.woff2);
+}
+body {
+  background-color: black;
+  color: white;
+  font-family: kamerik-3d;
+}
+.logo {
+  --logo-size: calc(var(--index) * 7.8);
+  position: absolute;
+  width: var(--logo-size);
+  height: var(--logo-size);
+  background-repeat: no-repeat;
+  left: calc(50% - calc(var(--logo-size) / 2));
+  top: calc(var(--index) * 2.5);
+  z-index: 1;
+}
+.layers {
+  perspective: 1000px;
+  overflow: hidden;
+}
+.layers__container {
+  height: 100vh;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--mouse-y)) rotateY(var(--mouse-x));
+  min-height: 500px;
+  will-change: transform;
+  transition: transform var(--transition);
+}
+.layers__item {
+  position: absolute;
+  inset: -5vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.layer-1 {
+  transform: translateZ(-55px) scale(1.06);
+}
+.layer-2 {
+  transform: translateZ(80px) scale(0.9);
+}
+.layer-3 {
+  transform: translateZ(350px) scale(0.45);
+}
+.layer-4 {
+  transform: translateZ(200px); 
+  width: 100%;
+    height: 100%;
+    z-index: 5; 
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+.layer-5 {
+  transform: translateZ(250px) scale(0.4);
+}
+.layer-6 {
+  transform: translateZ(380px) scale(0.65);
+}
+.hero-content {
+  font-size: calc(var(--index) * 2);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: calc(var(--index) * -0.15);
+  line-height: 1.7em;
+  margin-top: calc(var(--index) * 5.5);
+}
+.hero-content span {
+  display: block;
+}
+.hero-content__p {
+  text-transform: none;
+  font-family: marriweather-italic-3d;
+  letter-spacing: normal;
+  font-size: calc(var(--index) * 2.2);
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.button-start {
+  margin-top: calc(var(--index) * 4);
+  padding: calc(var(--index) * 1) calc(var(--index) * 3);
+  font-size: calc(var(--index) * 1.6);
+  background-color: rgba(128, 0, 0, 0.1);
+  border: 2px solid rgb(255, 0, 0);
+  border-radius: 50px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.button-start:hover {
+  background-color: rgb(255, 0, 0);
+  color: black;
+}
