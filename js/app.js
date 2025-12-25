@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let y = e.beta - startBeta;
 
       // 3. Ограничиваем углы (чтобы не улетало при сильном наклоне)
-      const maxTilt = 3; 
+      const maxTilt = 5; 
 
       if (x > maxTilt) x = maxTilt;
       if (x < -maxTilt) x = -maxTilt;
@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (y < -maxTilt) y = -maxTilt;
 
       // 4. Применяем (инверсия -0.7 для эффекта глубины)
-      root.style.setProperty("--mouse-x", `${x * -0.3}deg`);
-      root.style.setProperty("--mouse-y", `${y * -0.3}deg`);
+      root.style.setProperty("--mouse-x", `${x * -0.8}deg`);
+      root.style.setProperty("--mouse-y", `${y * -0.5}deg`);
     };
 
     const requestGyroPermission = async () => {
