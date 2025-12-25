@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startAutoAnimation = () => {
       const animate = () => {
         // Время в секундах
-        const time = Date.now() * 0.001; 
+        const time = Date.now() * 0.002; 
         
         // НАСТРОЙКИ СКОРОСТИ И АМПЛИТУДЫ
         // Math.sin(time * СКОРОСТЬ) * АМПЛИТУДА

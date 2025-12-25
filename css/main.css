@@ -80,6 +80,9 @@ body {
   .layer-6{
     display: none;
   }
+  .layer-2{
+      transform: translateZ(100px) scale(0.9);
+  }
 }
 .hero-content {
   font-size: calc(var(--index) * 2);
