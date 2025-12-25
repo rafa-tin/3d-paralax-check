@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const time = Date.now() * 0.001; // Время в секундах
         // Амплитуда 5-7 градусов, чтобы было заметно, но не тошнило
-        const x = Math.sin(time) * 5; 
-        const y = Math.cos(time * 0.8) * 5;
+        const x = Math.sin(time) * 2; 
+        const y = Math.cos(time * 0.8) * 1;
 
         root.style.setProperty("--mouse-x", `${x}deg`);
         root.style.setProperty("--mouse-y", `${y}deg`);
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!e.gamma || !e.beta) return;
 
       // Ограничиваем углы (clamp), чтобы не выворачивало сцену
-      const maxTilt = 20; // Максимальный наклон в градусах
+      const maxTilt = 10; // Максимальный наклон в градусах
       
       // Gamma - наклон влево/вправо (-90...90)
       let x = e.gamma; 
