@@ -27,9 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const startAutoAnimation = () => {
       const animate = () => {
         if (isGyroEnabled) return;
-        const time = Date.now() * 0.01;
-        const x = Math.sin(time) * 0.5; 
-        const y = Math.cos(time * 0.8) * 0.5;
+        const time = Date.now() * 0.001;
+        const x = Math.sin(time) * 1; 
+        const y = Math.cos(time * 0.8) * 1;
         root.style.setProperty("--mouse-x", `${x}deg`);
         root.style.setProperty("--mouse-y", `${y}deg`);
         autoAnimationFrameId = requestAnimationFrame(animate);
@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (y < -maxTilt) y = -maxTilt;
 
       // 4. Применяем (инверсия -0.7 для эффекта глубины)
-      root.style.setProperty("--mouse-x", `${x * -0.7}deg`);
-      root.style.setProperty("--mouse-y", `${y * -0.7}deg`);
+      root.style.setProperty("--mouse-x", `${x * -0.3}deg`);
+      root.style.setProperty("--mouse-y", `${y * -0.3}deg`);
     };
 
     const requestGyroPermission = async () => {
