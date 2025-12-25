@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const x = Math.sin(time * 0.5) * 2; 
         
         // Движение вверх-вниз (поменьше, другая частота для красоты)
-        const y = Math.cos(time * 0.3) * 1; 
+        const y = Math.cos(time * 0.3) * 1.5; 
 
         root.style.setProperty("--mouse-x", `${x}deg`);
         root.style.setProperty("--mouse-y", `${y}deg`);
