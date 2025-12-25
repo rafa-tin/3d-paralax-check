@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isGyroEnabled) return;
         const time = Date.now() * 0.001;
         const x = Math.sin(time) * 1; 
-        const y = Math.cos(time * 0.8) * 2;
+        const y = Math.cos(time * 0.8) * 1;
         root.style.setProperty("--mouse-x", `${x}deg`);
         root.style.setProperty("--mouse-y", `${y}deg`);
         autoAnimationFrameId = requestAnimationFrame(animate);
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let y = e.beta - startBeta;
 
       // 3. Ограничиваем углы (чтобы не улетало при сильном наклоне)
-      const maxTilt = 10; 
+      const maxTilt = 3; 
 
       if (x > maxTilt) x = maxTilt;
       if (x < -maxTilt) x = -maxTilt;
