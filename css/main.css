@@ -83,7 +83,19 @@ body {
   .layer-2{
       transform: translateZ(100px) scale(0.9);
   }
+  .layer-5 {
+    /* "contain" заставляет картинку сжаться и влезть целиком */
+    background-size: contain; 
+    background-repeat: no-repeat;
+    
+    /* Возможно, придется чуть увеличить масштаб (scale), 
+       потому что contain может сделать её визуально меньше.
+       Попробуйте значения от 0.4 до 0.7 
+    */
+    transform: translateZ(250px) scale(0.85); 
+  }
 }
+
 .hero-content {
   font-size: calc(var(--index) * 2);
   text-align: center;
